@@ -5,3 +5,4 @@
     - default LoginView, LogoutView
     - Change password views
     - Reset password views
+- All in one URLS with default django authentication views
