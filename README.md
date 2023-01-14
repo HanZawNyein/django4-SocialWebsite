@@ -14,3 +14,7 @@
 - Implementing Social Authentication
     - Adding social authentication to your site
     - Running the development server through HTTPS
+    - Authentication using Facebook
+    - Authentication using Twitter
+    - Authentication using Google
+    - Creating a profile for users that register with social authentication
