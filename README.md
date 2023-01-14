@@ -27,3 +27,4 @@
     - Building a bookmarklet with JavaScript
     - Creating a detail view for images
  - Creating image thumbnails using easy-thumbnails
+ - Adding asynchronous actions with JavaScript (Like, Unlike)
