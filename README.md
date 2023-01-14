@@ -18,3 +18,12 @@
     - Authentication using Twitter
     - Authentication using Google
     - Creating a profile for users that register with social authentication
+    
+- Sharing Content on Your Website
+    - Creating an image bookmarking website
+        - Building the image model
+    - Posting content from other websites
+        - Overriding the save() method of a ModelForm
+    - Building a bookmarklet with JavaScript
+    - Creating a detail view for images
+ - Creating image thumbnails using easy-thumbnails
