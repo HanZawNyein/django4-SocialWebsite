@@ -28,3 +28,4 @@
     - Creating a detail view for images
  - Creating image thumbnails using easy-thumbnails
  - Adding asynchronous actions with JavaScript (Like, Unlike)
+ - Adding infinite scroll pagination to the image list
