@@ -6,3 +6,5 @@
     - Change password views
     - Reset password views
 - All in one URLS with default django authentication views
+- User registration and user profiles
+- Extending the user model
