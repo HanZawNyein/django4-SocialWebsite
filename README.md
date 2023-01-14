@@ -8,3 +8,4 @@
 - All in one URLS with default django authentication views
 - User registration and user profiles
 - Extending the user model
+- Using the messages framework
