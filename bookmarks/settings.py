@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-hkv7=u=g$fd$pf5tu6*dw%ou1zrzv(zd-rdse2z3_t&11p+q49
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['hanzaw.com','localhost','127.0.0.1']
 
 
 # Application definition
@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'account.apps.AccountConfig',
+
+    'social_django',
+    'django_extensions'
 ]
 
 MIDDLEWARE = [
@@ -135,5 +138,10 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
-    'account.authentication.EmailAuthBackend'
+    'account.authentication.EmailAuthBackend',
+    'social_core.backends.facebook.FacebookOAuth2'
 ]
+
+SOCIAL_AUTH_FACEBOOK_KEY = 'XXX' # Facebook App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = 'XXX' # Facebook App Secret
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']

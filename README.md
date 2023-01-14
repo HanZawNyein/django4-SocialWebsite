@@ -11,3 +11,6 @@
 - Using the messages framework
 - Building a custom authentication backend
 - Preventing users from using an existing email
+- Implementing Social Authentication
+    - Adding social authentication to your site
+    - Running the development server through HTTPS
