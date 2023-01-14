@@ -4,3 +4,4 @@
 - Using Django authentication views
     - default LoginView, LogoutView
     - Change password views
+    - Reset password views
