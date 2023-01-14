@@ -9,3 +9,4 @@
 - User registration and user profiles
 - Extending the user model
 - Using the messages framework
+- Building a custom authentication backend
