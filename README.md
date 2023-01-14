@@ -10,3 +10,4 @@
 - Extending the user model
 - Using the messages framework
 - Building a custom authentication backend
+- Preventing users from using an existing email
