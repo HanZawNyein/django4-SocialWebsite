@@ -39,9 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'account.apps.AccountConfig',
+    'images.apps.ImagesConfig',
 
     'social_django',
-    'django_extensions'
+    'django_extensions',
+    'easy_thumbnails'
 ]
 
 MIDDLEWARE = [
@@ -168,3 +170,4 @@ SOCIAL_AUTH_PIPELINE = [
 
     'account.authentication.create_profile'
 ]
+    
