@@ -34,3 +34,14 @@
  - Building a follow system
     - Creating many-to-many relationships with an intermediary model
     - Creating list and detail views for user profiles
+- Building a generic activity stream application
+- Using the contenttypes framework
+    - Adding generic relations to your models
+    - Avoiding duplicate actions in the activity stream
+    - Adding user actions to the activity stream
+    - Displaying the activity stream
+    - Optimizing QuerySets that involve related objects
+- Using signals for denormalizing counts
+    - Working with signals
+    - Application configuration classes
+- Using Django Debug Toolbar

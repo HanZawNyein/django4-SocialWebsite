@@ -4,11 +4,11 @@ from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.auth.models import User
-
+from actions.utils import create_action
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
 from .models import Contact
-
+from actions.models import Action
 from .forms import LoginForm, UserRegistrationForm, UserEditForm, ProfileEditForm
 from .models import Profile
 
@@ -41,6 +41,7 @@ def register(request):
             new_user.save()
 
             Profile.objects.create(user=new_user)
+            create_action(new_user, 'has created an account')
             return render(request, 'account/register_done.html', {'new_user': new_user})
     else:
         user_form = UserRegistrationForm()
@@ -67,7 +68,16 @@ def edit(request):
 
 @login_required
 def dashboard(request):
-    return render(request, 'account/dashboard.html', {'section': 'dashboard'})
+    # Display all actions by default
+    actions = Action.objects.exclude(user=request.user)
+    following_ids = request.user.following.values_list('id', flat=True)
+    if following_ids:
+        # If user is following others, retrieve only their actions
+        actions = actions.filter(user_id__in=following_ids)
+    actions = actions.select_related(
+        'user', 'user__profile').prefetch_related('target')[:10]
+    print(actions, request.user)
+    return render(request, 'account/dashboard.html', {'section': 'dashboard', 'actions': actions})
 
 
 @login_required
@@ -94,9 +104,10 @@ def user_follow(request):
                 Contact.objects.get_or_create(
                     user_from=request.user,
                     user_to=user)
+                create_action(request.user, 'is following', user)
             else:
                 Contact.objects.filter(user_from=request.user,
-                                    user_to=user).delete()
+                                       user_to=user).delete()
             return JsonResponse({'status': 'ok'})
         except User.DoesNotExist:
             return JsonResponse({'status': 'error'})
