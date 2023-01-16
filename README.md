@@ -19,7 +19,7 @@
     - Authentication using Google
     - Creating a profile for users that register with social authentication
     
-- Sharing Content on Your Website
+### Sharing Content on Your Website
     - Creating an image bookmarking website
         - Building the image model
     - Posting content from other websites
@@ -29,3 +29,19 @@
  - Creating image thumbnails using easy-thumbnails
  - Adding asynchronous actions with JavaScript (Like, Unlike)
  - Adding infinite scroll pagination to the image list
+
+ ### Tracking User Actions
+ - Building a follow system
+    - Creating many-to-many relationships with an intermediary model
+    - Creating list and detail views for user profiles
+- Building a generic activity stream application
+- Using the contenttypes framework
+    - Adding generic relations to your models
+    - Avoiding duplicate actions in the activity stream
+    - Adding user actions to the activity stream
+    - Displaying the activity stream
+    - Optimizing QuerySets that involve related objects
+- Using signals for denormalizing counts
+    - Working with signals
+    - Application configuration classes
+- Using Django Debug Toolbar
